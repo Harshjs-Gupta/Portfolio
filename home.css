@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  background-color: rgb(26, 26, 58);
+  overflow: hidden;
+}
+
+.nav-bar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.name-portfolio {
+  margin: 20px 590px 0px 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.home,
+.about,
+.service,
+.portfolio,
+.contact {
+  font-size: 20px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.home:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.about:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.service:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.portfolio:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.contact:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.Profile-container {
+  height: 550px;
+  width: 1349px;
+  background-color: transparent;
+  position: relative;
+}
+
+.picture1 {
+  height: 400px;
+  width: 400px;
+  background-color: aqua;
+  position: absolute;
+  top: 50px;
+  right: 90px;
+  border-radius: 1000px;
+  box-shadow: 0px 0px 50px aqua;
+  overflow: hidden;
+}
+
+.myPicture-one {
+  height: 500px;
+  position: absolute;
+  bottom: 0px;
+  left: 70px;
+  filter: drop-shadow(10px 10px 20px black);
+}
+
+.myPicture-one:hover {
+  scale: 1.1;
+}
+
+.introduction {
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Hello {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.myName {
+  font-size: 50px;
+  font: 900;
+  margin-left: 30px;
+}
+
+.profession {
+  display: flex;
+  margin-left: 30px;
+}
+
+.static-txt {
+  font-size: 25px;
+}
+
+.dynamic-txt {
+  height: 50px;
+  overflow: hidden;
+}
+
+span {
+  color: aqua;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+dynamic-text,
+li {
+  color: aqua;
+  position: relative;
+  list-style-type: none;
+  height: 50px;
+  position: relative;
+  top: 0;
+  animation: slide 4s steps(2) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -100px;
+  }
+}
+
+span::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  background: rgb(26, 26, 58);
+  border-left: 2px solid aqua;
+  animation: typing 2s steps(11) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0px -35px 0px 35px;
+  }
+}
+
+.lorem1 {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.social-account {
+  height: 50px;
+  width: 400px;
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  top: 400px;
+  left: 30px;
+}
+
+img {
+  height: 50px;
+}
+
+button {
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  background-color: aqua;
+  position: absolute;
+  top: 480px;
+  left: 30px;
+  border-radius: 25px;
+  border: 2px solid aqua;
+  box-shadow: 0px 0px 5px aqua, 0px 0px 5px aqua, 0px 0px 5px aqua,
+    0px 0px 5px aqua;
+}
