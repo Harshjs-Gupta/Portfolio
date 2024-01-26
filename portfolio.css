@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(26, 26, 58);
+  display: flex;
+}
+
+#projects {
+  position: absolute;
+  top: 20px;
+  left: 600px;
+  display: flex;
+}
+
+p {
+  font-size: 30px;
+}
+
+.projects {
+  margin-left: 10px;
+  color: aqua;
+}
+
+#container2 {
+  height: 500px;
+  width: 1300px;
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 200px 200px 200px;
+  gap: 30px;
+  padding: 30px 0px 0px 20px;
+}
+
+.project-container1,
+.project-container2,
+.project-container3,
+.project-container4,
+.project-container5,
+.project-container6 {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-container1 {
+  background-image: url(/Images/project1.png);
+  background-size: cover;
+}
+
+.project-container2 {
+  background-image: url(/Images/project2.png);
+  background-size: cover;
+}
+
+.project-container3 {
+  background-image: url(/Images/project3.png);
+  background-size: cover;
+}
+
+.project-container4 {
+  background-image: url(/Images/project4.png);
+  background-size: cover;
+}
+
+.project-container5 {
+  background-image: url(/Images/project5.png);
+  background-size: cover;
+}
+
+.project-container6 {
+  background-image: url(/Images/project6.png);
+  background-size: cover;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6 {
+  width: 100%;
+  height: 190px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0px 80px 50px aqua inset, 0px 0px 0px transparent,
+    0px 0px 0px transparent, 0px 0px 0px transparent;
+  overflow: hidden;
+}
+
+.card1:hover {
+  animation: slideUp 1s linear;
+}
+.card2:hover {
+  animation: slideUp 1s linear;
+}
+.card3:hover {
+  animation: slideUp 1s linear;
+}
+.card4:hover {
+  animation: slideUp 1s linear;
+}
+.card5:hover {
+  animation: slideUp 1s linear;
+}
+.card6:hover {
+  animation: slideUp 1s linear;
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+  0% {
+    transform: translateY(160px);
+  }
+}
+
+h3 {
+  margin: 20px 0px 20px 150px;
+}
+
+span {
+  height: 100px;
+  width: 100%;
+  font-size: 20px;
+  margin: 20px 0px 0px 30px;
+}
