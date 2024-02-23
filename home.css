@@ -81,10 +81,10 @@ body {
 }
 
 .myPicture-one {
-  height: 500px;
+  height: 350px;
   position: absolute;
   bottom: 0px;
-  left: 70px;
+  left: 40px;
   filter: drop-shadow(10px 10px 20px black);
 }
 
@@ -193,7 +193,7 @@ button {
   font-size: 20px;
   background-color: aqua;
   position: absolute;
-  top: 480px;
+  top: 470px;
   left: 30px;
   border-radius: 25px;
   border: 2px solid aqua;
