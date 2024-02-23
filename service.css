@@ -15,6 +15,7 @@ body {
   height: 100vh;
   position: relative;
   background-color: rgb(26, 26, 58);
+  overflow: hidden;
 }
 
 .our-service {
@@ -49,7 +50,7 @@ body {
   overflow: hidden;
 }
 
-.Ux-designer {
+.container {
   height: 400px;
   width: 400px;
   background-color: grey;
@@ -108,15 +109,6 @@ i {
   scale: 1.1;
 }
 
-.Wev-devloper {
-  height: 400px;
-  width: 400px;
-  background-color: grey;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 .code {
   position: absolute;
   top: 70px;
@@ -142,15 +134,6 @@ i {
   width: 200px;
   position: absolute;
   top: 180px;
-}
-
-.ethicalHacker {
-  height: 400px;
-  width: 400px;
-  background-color: grey;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .hacking-icon {
