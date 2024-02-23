@@ -38,28 +38,28 @@ project4.addEventListener("mouseover", slidUp4);
 project5.addEventListener("mouseover", slidUp5);
 project6.addEventListener("mouseover", slidUp6);
 
-const againHide1 = function () {
+const Hide1 = function () {
   document.querySelector(".card1").classList.add("hidden");
 };
-const againHide2 = function () {
+const Hide2 = function () {
   document.querySelector(".card2").classList.add("hidden");
 };
-const againHide3 = function () {
+const Hide3 = function () {
   document.querySelector(".card3").classList.add("hidden");
 };
-const againHide4 = function () {
+const Hide4 = function () {
   document.querySelector(".card4").classList.add("hidden");
 };
-const againHide5 = function () {
+const Hide5 = function () {
   document.querySelector(".card5").classList.add("hidden");
 };
-const againHide6 = function () {
+const Hide6 = function () {
   document.querySelector(".card6").classList.add("hidden");
 };
 
-project1.addEventListener("mouseout", againHide1);
-project2.addEventListener("mouseout", againHide2);
-project3.addEventListener("mouseout", againHide3);
-project4.addEventListener("mouseout", againHide4);
-project5.addEventListener("mouseout", againHide5);
-project6.addEventListener("mouseout", againHide6);
+project1.addEventListener("mouseout", Hide1);
+project2.addEventListener("mouseout", Hide2);
+project3.addEventListener("mouseout", Hide3);
+project4.addEventListener("mouseout", Hide4);
+project5.addEventListener("mouseout", Hide5);
+project6.addEventListener("mouseout", Hide6);
