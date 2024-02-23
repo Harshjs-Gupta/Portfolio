@@ -102,26 +102,23 @@ p {
   overflow: hidden;
 }
 
-.card1:hover {
-  animation: slideUp 1s linear;
-}
-.card2:hover {
-  animation: slideUp 1s linear;
-}
-.card3:hover {
-  animation: slideUp 1s linear;
-}
-.card4:hover {
-  animation: slideUp 1s linear;
-}
-.card5:hover {
-  animation: slideUp 1s linear;
-}
-.card6:hover {
-  animation: slideUp 1s linear;
+.hidden {
+  display: none;
 }
 
 @keyframes slideUp {
+  0% {
+    transform: translateY(200px);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes downWord {
   100% {
     transform: translateY(0px);
   }
@@ -129,7 +126,7 @@ p {
     transform: translateY(80px);
   }
   0% {
-    transform: translateY(160px);
+    transform: translateY(200px);
   }
 }
 
