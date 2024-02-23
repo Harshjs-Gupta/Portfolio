@@ -15,10 +15,58 @@ body {
   background-color: rgb(26, 26, 58);
 }
 
+.nav-bar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.name-portfolio {
+  margin: 20px 650px 0px 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.home,
+.about,
+.service,
+.portfolio,
+.contact {
+  font-size: 20px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.home:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.about:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.service:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.portfolio:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.contact:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
 #contact-Me {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 pre {
@@ -78,7 +126,7 @@ label {
 }
 
 .message {
-  height: 280px;
+  height: 200px;
   width: 740px;
   font-size: 15px;
   border-radius: 10px;
