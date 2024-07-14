@@ -2,113 +2,124 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
 }
 
-body {
-  height: 100vh;
-  position: relative;
-  background-color: rgb(26, 26, 58);
-  overflow: hidden;
+@font-face {
+  font-family: "CustomFont";
+  src: url("./Montserrat-Regular.ttf") format("truetype");
 }
 
-.nav-bar {
-  height: 60px;
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "CustomFont";
+  position: relative;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  /* background-color: antiquewhite; */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav_bar {
+  width: 100%;
+  height: 4rem;
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-self: start;
+  gap: 30px;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .name-portfolio {
-  margin: 20px 650px 0px 30px;
+  color: aqua;
+  font-weight: 900;
+  margin: 0px 650px 0px 30px;
   font-size: 30px;
   font-weight: 700;
 }
 
-.home,
-.about,
-.service,
-.portfolio,
-.contact {
+.nav_links {
+  color: white;
+  font-weight: 600;
   font-size: 20px;
-  margin-top: 20px;
   text-decoration: none;
 }
 
-.home:hover {
+.nav_links:hover {
   color: aqua;
-  text-shadow: 0px 0px 30px aqua;
-}
-
-.about:hover {
-  color: aqua;
-  text-shadow: 0px 0px 30px aqua;
-}
-
-.service:hover {
-  color: aqua;
-  text-shadow: 0px 0px 30px aqua;
-}
-
-.portfolio:hover {
-  color: aqua;
-  text-shadow: 0px 0px 30px aqua;
-}
-
-.contact:hover {
-  color: aqua;
+  text-decoration: underline;
   text-shadow: 0px 0px 30px aqua;
 }
 
 .Profile-container {
-  height: 550px;
-  width: 1349px;
-  background-color: transparent;
+  height: 600px;
+  width: 100%;
+  /* background-color: transparent; */
   position: relative;
 }
 
 .picture1 {
   height: 400px;
   width: 400px;
-  background-color: aqua;
+  background-color: rgba(0, 255, 255, 0.6);
   position: absolute;
-  top: 50px;
+  top: 130px;
   right: 90px;
-  border-radius: 1000px;
-  box-shadow: 0px 0px 50px aqua;
+  border-radius: 100%;
+  box-shadow: 0px 0px 20px aqua;
   overflow: hidden;
 }
 
+.picture1:hover {
+  box-shadow: 0px 0px 60px aqua;
+}
+
 .myPicture-one {
-  height: 350px;
+  height: 390px;
   position: absolute;
+  top: 60px;
   bottom: 0px;
   left: 40px;
   filter: drop-shadow(10px 10px 20px black);
-}
-
-.myPicture-one:hover {
-  scale: 1.1;
 }
 
 .introduction {
   height: 400px;
   width: 700px;
   position: absolute;
-  top: 50px;
+  top: 80px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .Hello {
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 30px;
 }
 
 .myName {
-  font-size: 50px;
+  font-size: 40px;
   font: 900;
   margin-left: 30px;
 }
@@ -150,15 +161,15 @@ li {
   }
 }
 
-span::after {
+.Typing::after {
   content: " ";
   position: absolute;
   left: 0;
   height: 80%;
   width: 100%;
-  background: rgb(26, 26, 58);
+  background: black;
   border-left: 2px solid aqua;
-  animation: typing 2s steps(11) infinite;
+  animation: typing 2s steps(12) infinite;
 }
 
 @keyframes typing {
@@ -174,29 +185,469 @@ span::after {
 }
 
 .social-account {
-  height: 50px;
-  width: 400px;
   display: flex;
-  gap: 40px;
   position: absolute;
-  top: 400px;
+  top: 430px;
   left: 30px;
 }
 
 img {
-  height: 50px;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
-button {
-  height: 50px;
-  width: 200px;
+.logo:hover {
+  scale: 1.2;
+  filter: drop-shadow(0px 0px 5px aqua);
+}
+
+.download_btn {
+  color: white;
+  height: 40px;
+  width: 150px;
   font-size: 20px;
   background-color: aqua;
   position: absolute;
-  top: 470px;
+  top: 510px;
   left: 30px;
   border-radius: 25px;
   border: 2px solid aqua;
   box-shadow: 0px 0px 5px aqua, 0px 0px 5px aqua, 0px 0px 5px aqua,
     0px 0px 5px aqua;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+.section {
+  /* padding: 1rem 2rem; */
+  border-top: 1px solid #ddd;
+
+  transition: transform 1s, opacity 1s;
+}
+
+/* Section-1 */
+
+.about-container {
+  height: 100vh;
+  width: 100%;
+  /* background-color: transparent; */
+  position: relative;
+}
+
+.picture2 {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roboLogo {
+  height: 350px;
+}
+
+.About-page {
+  height: 50px;
+  width: 400px;
+  position: absolute;
+  top: 120px;
+  left: 45%;
+  display: flex;
+}
+
+#About {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+#Me {
+  font-size: 40px;
+  color: aqua;
+}
+
+.devloper {
+  height: 50px;
+  width: 300px;
+  position: absolute;
+  top: 190px;
+  left: 45%;
+}
+
+.frontend {
+  font-size: 25px;
+}
+
+.Information-AboutMe {
+  height: 100px;
+  width: 700px;
+  font-size: 20px;
+  position: absolute;
+  top: 260px;
+  left: 45%;
+}
+
+.seeMore {
+  height: 30px;
+  width: 80px;
+  color: white;
+  background-color: aqua;
+  position: absolute;
+  top: 460px;
+  left: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px aqua;
+}
+
+.seeMore:hover {
+  scale: 1.1;
+}
+
+.More_about_me {
+  height: 500px;
+  width: 700px;
+  position: relative;
+  top: 10%;
+  left: 25%;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+
+.hidden_aboutBox {
+  display: none;
+}
+
+.close_btn {
+  color: white;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+.skill,
+.tool,
+.learn,
+.growth {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* Section-3 */
+
+.service-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  /* background-color: aquamarine; */
+}
+
+.our-service {
+  width: 700px;
+  position: absolute;
+  top: 10px;
+  left: 550px;
+  font-size: 30px;
+  display: flex;
+  /* align-items: center; */
+  gap: 10px;
+}
+
+.OurService {
+  color: aqua;
+}
+
+.container {
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 230px 230px;
+  row-gap: 20px;
+  column-gap: 30px;
+  place-content: center;
+  /* background-color: aqua; */
+}
+
+.Box1,
+.Box2,
+.Box3,
+.Box4 {
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+}
+
+#Brush-icon,
+.fa-react,
+.fa-laptop-code,
+.fa-compass-drafting {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  color: aqua;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_UX {
+  width: 450px;
+  margin-top: 10px;
+  margin-left: 20px;
+  text-align: center;
+  overflow: auto;
+}
+
+/* Section- 4 */
+
+#projects {
+  position: relative;
+  top: 20px;
+  left: 600px;
+  display: flex;
+}
+
+p {
+  font-size: 30px;
+}
+
+.projects {
+  margin-left: 10px;
+  color: aqua;
+}
+
+#container1 {
+  height: 560px;
+  width: 100%;
+  position: relative;
+  top: 40px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 200px 200px 200px;
+  gap: 30px;
+  padding: 30px 0px 0px 20px;
+}
+
+.project-container1,
+.project-container2,
+.project-container3,
+.project-container4,
+.project-container5,
+.project-container6 {
+  border-radius: 10px;
+  position: relative;
+  left: 20px;
+  overflow: hidden;
+}
+
+.project-container1 {
+  background-image: url(/Images/project1.png);
+  background-size: cover;
+}
+
+.project-container2 {
+  background-image: url(/Images/project2.png);
+  background-size: cover;
+}
+
+.project-container3 {
+  background-image: url(/Images/project3.png);
+  background-size: cover;
+}
+
+.project-container4 {
+  background-image: url(/Images/project4.png);
+  background-size: cover;
+}
+
+.project-container5 {
+  background-image: url(/Images/project5.png);
+  background-size: cover;
+}
+
+.project-container6 {
+  background-image: url(/Images/project6.png);
+  background-size: cover;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6 {
+  width: 100%;
+  height: 190px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0px 80px 50px rgba(0, 255, 255, 0.6) inset,
+    0px 0px 0px transparent, 0px 0px 0px transparent, 0px 0px 0px transparent;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.about_project {
+  color: white;
+  font-size: 15px;
+}
+
+.goToButton {
+  color: black;
+  font-weight: 600;
+  /* height: 25px; */
+
+  background-color: aqua;
+  position: relative;
+  top: 30px;
+  left: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(200px);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.Up_animation {
+  animation: slideUp 2s linear;
+}
+
+@keyframes downWord {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(200px);
+  }
+}
+
+.Down_animation {
+  animation: downWord 2s linear;
+}
+
+h3 {
+  margin: 0px 0px 10px 120px;
+}
+
+/* Section - 5 */
+
+#contact-Me {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.contactMe {
+  color: aqua;
+}
+
+.conatiner3 {
+  height: 500px;
+  width: 100%;
+  margin-top: 0px;
+  margin-left: 250px;
+}
+
+.information-container {
+  display: grid;
+  grid-template-columns: 350px 350px;
+  grid-template-rows: 50px 50px;
+  gap: 40px;
+}
+
+label {
+  position: relative;
+  top: 10px;
+  left: 80px;
+  font-size: 20px;
+}
+
+.name {
+  height: 50px;
+  width: 350px;
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: none;
+  position: relative;
+  top: 10px;
+  bottom: 10px;
+}
+
+.messageBox {
+  height: 280px;
+  width: 740px;
+  position: relative;
+  top: 50px;
+  left: 80px;
+}
+
+#MessageLabel {
+  position: relative;
+  left: 0;
+}
+
+.message {
+  height: 200px;
+  width: 740px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: none;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 1em;
+  padding-left: 10px;
+  position: absolute;
+  top: 10px;
 }
