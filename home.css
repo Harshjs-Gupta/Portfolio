@@ -120,7 +120,7 @@ body {
 
 .myName {
   font-size: 40px;
-  font: 900;
+  font-weight: 900;
   margin-left: 30px;
 }
 
@@ -198,25 +198,25 @@ img {
 
 .logo:hover {
   scale: 1.2;
-  filter: drop-shadow(0px 0px 5px aqua);
+  /* filter: drop-shadow(0px 0px 5px aqua); */
 }
 
 .download_btn {
   color: white;
   height: 40px;
   width: 150px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: aqua;
   position: absolute;
   top: 510px;
   left: 30px;
   border-radius: 25px;
-  border: 2px solid aqua;
-  box-shadow: 0px 0px 5px aqua, 0px 0px 5px aqua, 0px 0px 5px aqua,
-    0px 0px 5px aqua;
+  display: block;
+  text-align: center;
+  align-content: center;
 }
 
-button:hover {
+.download_btn:hover {
   scale: 1.1;
 }
 
@@ -322,7 +322,12 @@ button:hover {
   padding-left: 10px;
   padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.9);
-  overflow: auto;
+}
+
+#show_skill {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .hidden_aboutBox {
@@ -331,8 +336,7 @@ button:hover {
 
 .close_btn {
   color: white;
-  height: 30px;
-  width: 30px;
+  font-size: 30px;
   position: absolute;
   right: 0;
   border: none;
