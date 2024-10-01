@@ -8,69 +8,72 @@ document.querySelector(".nav_bar").addEventListener("click", function (e) {
   }
 });
 
-const seeBtn = document.querySelector(".seeMore");
-const closeBtn = document.querySelector(".close_btn");
-const aboutContainer = document.querySelector(".More_about_me");
+const education_btn = document.querySelector(".education");
+const skill_btn = document.querySelector(".skill");
+const about_btn = document.querySelector(".aboutMe");
+const education_container = document.querySelector(".education-container");
+const skill_container = document.querySelector(".skill-container");
+const about_container = document.querySelector(".about-container");
 
-//About section
-
-seeBtn.addEventListener("click", function () {
-  aboutContainer.classList.remove("hidden_aboutBox");
-});
-
-closeBtn.addEventListener("click", function () {
-  aboutContainer.classList.add("hidden_aboutBox");
-});
-
-// Portfolio section
-
-const projectContainer = document.querySelector(".container1");
-const projects = [
-  "project-container1",
-  "project-container2",
-  "project-container3",
-  "project-container4",
-  "project-container5",
-  "project-container6",
-];
-
-const cardClass = ["card1", "card2", "card3", "card4", "card5", "card6"];
-
-// Selecting all project elements
-const upAnimation = projects.map((projectClass) =>
-  document.querySelector(`.${projectClass}`)
-);
-
-// Selecting all card elements
-const cards = cardClass.map((classCard) =>
-  document.querySelector(`.${classCard}`)
-);
-
-upAnimation.forEach((projectElement, index) => {
-  if (projectElement) {
-    projectElement.addEventListener("mouseover", function () {
-      const card = cards[index]; // Get the corresponding card
-      if (card.classList.contains("hidden")) {
-        card.classList.remove("hidden");
-        card.classList.remove("Down_animation");
-        card.classList.add("Up_animation");
-      }
-    });
+education_btn.addEventListener("click", function () {
+  if (education_container.classList.contains("hidden")) {
+    education_container.classList.remove("hidden");
+    about_container.classList.add("hidden");
+    skill_container.classList.add("hidden");
+    skill_btn.classList.remove("active");
+    education_btn.classList.add("active");
+    about_btn.classList.remove("active");
+  } else {
+    education_btn.classList.remove(".active");
+    education_btn.classList.add("hidden");
   }
-  projectElement.addEventListener("mouseleave", function () {
-    const card = cards[index]; // Get the corresponding card
-    if (card) {
-      card.classList.remove("Up_animation");
-      card.classList.add("Down_animation");
+});
 
-      // Wait for the animation to end before adding the 'hidden' class
-      card.addEventListener(
-        "animationend",
-        function () {
-          card.classList.add("hidden");
-        },
-        { once: true }
-      );
-    }
-  });
+skill_btn.addEventListener("click", function () {
+  if (skill_container.classList.contains("hidden")) {
+    skill_container.classList.remove("hidden");
+    education_container.classList.add("hidden");
+    about_container.classList.add("hidden");
+    education_btn.classList.remove("active");
+    skill_btn.classList.add("active");
+    about_btn.classList.remove("active");
+  } else {
+    skill_btn.classList.add("hidden");
+    skill_container.classList.add("hidden");
+    skill_btn.classList.remove("active");
+  }
+});
+
+about_btn.addEventListener("click", function () {
+  if (about_container.classList.contains("hidden")) {
+    about_container.classList.remove("hidden");
+    education_container.classList.add("hidden");
+    skill_container.classList.add("hidden");
+    about_btn.classList.add("active");
+    education_btn.classList.remove("active");
+    skill_btn.classList.remove("active");
+  }
+});
+
+const project1_btn = document.querySelector(".project1");
+const project2_btn = document.querySelector(".project2");
+const project_container1 = document.querySelector(".project-container");
+const project_container2 = document.querySelector(".project-container2");
+
+project1_btn.addEventListener("click", function () {
+  if (project_container1.classList.contains("hidden")) {
+    project_container1.classList.remove("hidden");
+    project_container2.classList.add("hidden");
+    project1_btn.classList.add("active");
+    project2_btn.classList.remove("active");
+  }
+});
+
+project2_btn.addEventListener("click", function () {
+  if (project_container2.classList.contains("hidden")) {
+    project_container2.classList.remove("hidden");
+    project_container1.classList.add("hidden");
+    project1_btn.classList.remove("active");
+    project2_btn.classList.add("active");
+  }
 });
