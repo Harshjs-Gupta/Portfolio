@@ -38,7 +38,7 @@ function ProjectPage() {
 
   return (
     <>
-      <section id="section-4">
+      <section id="Project-page">
         <div className="project-selector">
           {projects.map((project) => (
             <span
