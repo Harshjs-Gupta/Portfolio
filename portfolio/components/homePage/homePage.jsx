@@ -4,12 +4,12 @@ import Twitter from "../../public/twitter.png";
 import Github from "../../public/github.png";
 import LinkedIn from "../../public/linkedIn.png";
 import OwnImage from "@/assets/Images/Harsh.png";
-import DownloadIcon from "@/assets/Images/Icons/download.png";
+import DownloadCVButton from "../downloadPDF/downloadCVButton";
 
 function HomePage() {
   return (
     <>
-      <section id="section-1">
+      <section id="Home-page">
         <div className="profile-container">
           <div className="introduction-container">
             <div className="introduction">
@@ -39,38 +39,35 @@ function HomePage() {
                 target="_blank"
                 className="logo"
               >
-                <Image src={Twitter} height={20} width={20} />
+                <Image src={Twitter} height={20} width={20} alt="twitterLogo" />
               </a>
               <a
                 href="https://www.linkedin.com/in/harsh-gupta-b56a63265/"
                 target="_blank"
                 className="logo"
               >
-                <Image src={LinkedIn} height={20} width={20} />
+                <Image
+                  src={LinkedIn}
+                  height={20}
+                  width={20}
+                  alt="linkedInLogo"
+                />
               </a>
               <a
                 href="https://github.com/Harshjs-Gupta"
                 target="_blank"
                 className="logo"
               >
-                <Image src={Github} height={20} width={20} />
+                <Image src={Github} height={20} width={20} alt="githubLogo" />
               </a>
             </div>
-            <div className="download_btn">
-              <a href="" download="HarshGupta_CV">
-                Download CV
-              </a>
-              <Image src={DownloadIcon} height={30} width={30} alt="" />
-            </div>
+            <DownloadCVButton />
           </div>
           <div className="picture-container">
-            <Image
-              src={OwnImage}
-              height={350}
-              width={350}
-              alt="myPic"
-              className="picture"
-            />
+            <div className="border"></div> {/* Rotating border */}
+            <div className="picture">
+              <Image src={OwnImage} height={350} width={350} alt="myPic" />
+            </div>
           </div>
         </div>
       </section>
