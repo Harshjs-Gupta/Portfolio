@@ -30,6 +30,9 @@ function ContactPage() {
   };
 
   emailjs.init("qIOC-ORviIXgeW28Y");
+  emailjs.init("service_aydvudk");
+  emailjs.init("template_1e5dixn");
+  emailjs.init("template_t81chpg");
 
   const handleSubmit = (e) => {
     e.preventDefault();
