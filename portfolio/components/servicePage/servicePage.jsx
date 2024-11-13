@@ -2,7 +2,7 @@ import "../../style/home.css";
 
 function ServicePage() {
   return (
-    <section className="section" id="section-2">
+    <section className="section" id="Service-page">
       <div className="service-container">
         <div className="service">
           <div>Our</div>
