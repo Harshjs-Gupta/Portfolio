@@ -9,13 +9,14 @@ import js from "@/assets/logo/js.png";
 import nextJs from "@/assets/logo/nextjs.png";
 import react from "@/assets/logo/react.png";
 import tailwind from "@/assets/logo/tailwind.png";
+import DownloadCVButton from "../downloadPDF/downloadCVButton";
 
 function AboutPage() {
   // State to manage which section is active
   const [activeSection, setActiveSection] = useState("education");
 
   return (
-    <section className="section" id="section-3">
+    <section className="section" id="Resume-page">
       <div className="aboutme-container">
         <div className="hire-container">
           <span>Why hire me?</span>
@@ -43,6 +44,9 @@ function AboutPage() {
             >
               About Me
             </button>
+            <div className="downloadCV">
+              <DownloadCVButton />
+            </div>
           </div>
         </div>
 
