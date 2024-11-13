@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
-import call from "@/assets/Images/Icons/call.png";
-import mail from "@/assets/Images/Icons/mail.png";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
+import Image from "next/image";
+import call from "@/assets/Images/Icons/call.png";
+import mail from "@/assets/Images/Icons/mail.png";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ function ContactPage() {
     number: "",
     email: "",
     message: "",
+    service: "",
   });
 
   const handleChange = (e) => {
@@ -32,6 +33,8 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Send the main email to you (the website owner)
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -42,17 +45,49 @@ function ContactPage() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Email send successfully 👍");
-          toast.success("Email send successfully");
-          setFormData({ name: "", number: "", email: "", message: "" });
+          toast.success("Message sent successfully!");
+
+          // Send the auto-reply to the user
+          const autoReplyData = {
+            to_email: formData.email,
+            user_name: formData.name,
+          };
+
+          // Sending the auto-reply email to the user
+          emailjs
+            .send(
+              process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+              process.env.NEXT_PUBLIC_AUTO_EMAILJS_TEMPLATE_ID, // The template ID for auto-reply email
+              autoReplyData,
+              process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+              (autoReplyResponse) => {
+                console.log(
+                  "Auto-reply sent successfully!",
+                  autoReplyResponse.status,
+                  autoReplyResponse.text
+                );
+                setFormData({
+                  name: "",
+                  number: "",
+                  email: "",
+                  message: "",
+                  service: "",
+                }); // Clear form
+              },
+              (error) => {
+                console.error("Error in sending auto-reply", error);
+              }
+            );
         },
         (err) => {
           console.log("FAILED...", err);
-          toast.error(err.message);
-          alert("Failed to send message. Please try again later.");
+          toast.error("Failed to send message. Please try again later.");
         }
       );
   };
+
   return (
     <section className="section" id="Contact-page">
       <div className="container p-20">
