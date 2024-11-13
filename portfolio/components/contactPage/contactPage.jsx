@@ -1,21 +1,94 @@
+"use client";
 import Image from "next/image";
 import call from "@/assets/Images/Icons/call.png";
 import mail from "@/assets/Images/Icons/mail.png";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import emailjs from "emailjs-com";
 
 function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    number: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleServiceChange = (e) => {
+    setFormData({
+      ...formData,
+      service: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Email send successfully 👍");
+          toast.success("Email send successfully");
+          setFormData({ name: "", number: "", email: "", message: "" });
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          toast.error(err.message);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
+  };
   return (
-    <section className="section" id="section-5">
+    <section className="section" id="Contact-page">
       <div className="container p-20">
-        <div className="contact-container">
+        <form className="contact-container" onSubmit={handleSubmit}>
           <span>Let&apos;s work together</span>
-          <div className="information-container">
-            <input type="text" placeholder="First name" />
-            <input type="text" placeholder="Last name" />
-            <input type="number" placeholder="Mob. Number" />
-            <input type="email" placeholder="Email Address" />
+          <div className="flex flex-col gap-3">
+            <input
+              type="text"
+              placeholder="Your name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="number"
+              placeholder="Mob. Number"
+              name="number"
+              value={formData.number}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="messageBox">
-            <select>
+            <select
+              value={formData.service}
+              name="service"
+              onChange={handleServiceChange}
+              required
+            >
               <option value="Select a service">Select a service</option>
               <option value="Web Development">Web Development</option>
               <option value="UI/UX Designer">UI/UX Designer</option>
@@ -25,10 +98,14 @@ function ContactPage() {
               type="message"
               placeholder="Your Message"
               className="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
             />
           </div>
-          <button>Send</button>
-        </div>
+          <button type="submit">Send</button>
+        </form>
         <div className="contact">
           <div className="contact-method">
             <div className="icon">
