@@ -15,6 +15,11 @@ function ContactPage() {
     service: "",
   });
 
+  // Initialize EmailJS with your public key once
+  if (typeof window !== "undefined") {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  }
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -29,15 +34,10 @@ function ContactPage() {
     });
   };
 
-  emailjs.init("qIOC-ORviIXgeW28Y");
-  emailjs.init("service_aydvudk");
-  emailjs.init("template_1e5dixn");
-  emailjs.init("template_t81chpg");
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send the main email to you (the website owner)
+    // Main email sending
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -50,17 +50,17 @@ function ContactPage() {
           console.log("SUCCESS!", response.status, response.text);
           toast.success("Message sent successfully!");
 
-          // Send the auto-reply to the user
+          // Auto-reply email data
           const autoReplyData = {
             to_email: formData.email,
             user_name: formData.name,
           };
 
-          // Sending the auto-reply email to the user
+          // Sending the auto-reply email
           emailjs
             .send(
               process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-              process.env.NEXT_PUBLIC_AUTO_EMAILJS_TEMPLATE_ID, // The template ID for auto-reply email
+              process.env.NEXT_PUBLIC_AUTO_EMAILJS_TEMPLATE_ID,
               autoReplyData,
               process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             )
@@ -135,7 +135,7 @@ function ContactPage() {
               <option value="Frontend Development">Frontend Development</option>
             </select>
             <input
-              type="message"
+              type="text"
               placeholder="Your Message"
               className="message"
               name="message"
@@ -170,4 +170,5 @@ function ContactPage() {
     </section>
   );
 }
+
 export default ContactPage;
