@@ -29,7 +29,7 @@ function ContactPage() {
     });
   };
 
-  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  emailjs.init("qIOC-ORviIXgeW28Y");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -104,7 +104,7 @@ function ContactPage() {
             />
             <input
               type="number"
-              placeholder="Mob. Number"
+              placeholder="Your Mob. Number"
               name="number"
               value={formData.number}
               onChange={handleChange}
@@ -112,7 +112,7 @@ function ContactPage() {
             />
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Your Email"
               name="email"
               value={formData.email}
               onChange={handleChange}
