@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
+import Notification from "@/components/toastifyNotification/notification";
 
 const montSans = localFont({
   src: "./fonts/Montserrat-Regular.ttf",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montSans.variable} ${montMono.variable} antialiased`}>
+        <Notification />
         <Navbar />
         {children}
       </body>
